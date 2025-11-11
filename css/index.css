@@ -519,7 +519,7 @@ header .section2 .container .parent .personCon .row .column .box .shape .textCon
 }
 @media (max-width: 1300px) {
   header .section2 .container .parent .personCon .row .column .box .shape .textCon p {
-    font-size: 30px;
+    font-size: 25px;
   }
 }
 header .section2 .container .parent .personCon .row .column .box .shape .btnCon {
