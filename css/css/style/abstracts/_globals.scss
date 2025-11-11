@@ -1,0 +1,86 @@
+@use "variables" as *;
+@use "mixin" as *;
+body{
+    background-color: black;
+}
+.font1{
+    font-family: "tilth";
+}
+.font2{
+    font-family: "Dewan";
+}
+.font3{
+    font-family: "main";
+}
+.plyr--audio .plyr__controls {
+    border-radius: 10px;
+    background: transparent;
+    border: 2px solid blue;
+    position: relative;
+}
+.plyr__controls__item.plyr__volume{
+    @include responsive(350){
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translate(-50%);
+            border: 2px solid blue;
+            border-block: 0 !important;
+            margin-left: 0;
+            z-index: 1;
+    }
+    @include responsive(850){
+        position: initial!important;
+        transform: initial!important;
+        border: initial!important;
+        border-bottom: 0 !important;
+        margin: initial!important;
+    }
+}
+
+.plyr__control svg {
+    color: white;
+    
+}
+.plyr--audio .plyr__control:focus-visible,
+.plyr--audio .plyr__control:hover,
+.plyr--audio .plyr__control[aria-expanded=true] {
+    background: blue;
+    
+}
+.plyr__progress input[type=range] {
+    position: relative;
+    z-index: 2;
+    color: blue;
+    
+}
+.plyr__controls .plyr__controls__item.plyr__time {
+    color: rgb(255, 255, 255);
+    
+}
+.plyr__volume input[type=range] {
+    color: blue;
+}
+.plyr__menu__container .plyr__control[role=menuitemradio][aria-checked=true]:before {
+    background: #0003ff;
+}
+.fp-tableCell {
+    height: 100%!important;
+}
+#fp-nav ul li a span,
+.fp-slidesNav ul li a span {
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+    height: 4px;
+    width: 4px;
+    border: 0;
+    background: #ffffff!important;
+    left: 50%;
+    top: 50%;
+    margin: -2px 0 0 -2px;
+    -webkit-transition: all .1s ease-in-out;
+    -moz-transition: all .1s ease-in-out;
+    -o-transition: all .1s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}

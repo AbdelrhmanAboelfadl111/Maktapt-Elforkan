@@ -1,0 +1,119 @@
+@use "../abstracts" as *;
+.pop{
+    display: none;
+    @include size(100%,100%);
+    @include Position($type: absolute, $t: 0, $r: 0);
+    backdrop-filter: blur(5px) saturate(100%);
+    background: rgba(0, 0, 0, 0.348);
+    z-index: 1010;
+    .pop-box{
+        @include Position($type: absolute, $t: 50%, $l: 50%);
+        transform: translate(-50%,-50%);
+        overflow: hidden;
+        @include bgImg();
+        background-image: url("../imgs/36e84f89-5611-4cc4-b006-cf3b34de4112.jpg");
+        width: 700px;
+        @include responsive(350){
+            width: 100%;
+        }
+        @include responsive(650){
+            width: 500px;
+        }
+        @include responsive(850){
+            width: 700px;
+        }
+        padding-block: 30px;
+        border-radius: 15px;
+        border: 2px solid blue;
+        &::before {
+                @include shapeNav($w: 100%, $h: 100%, $color: rgba(0, 0, 0, 0.619), $opacity: 0.7);
+                @include Position($type: absolute, $t: 0, $r: 0);
+        }
+        .box{
+            @include flexCenter();
+            .item{
+                .data{
+                    @include responsive(350){
+                        flex-direction: column-reverse;
+                        .column1{
+                            margin-bottom: 0!important;
+                        }
+                        .column2{
+                            margin-bottom: 20px!important;
+                        }
+                    }
+                    @include responsive(850){
+                        flex-direction: initial!important;
+                    }
+                }
+                .textBox1{
+                    @include responsive(350){
+                        margin-bottom: 0!important;
+                    }
+                    
+                    margin-bottom: 25px!important;
+                    padding: 0!important;
+                    h2{
+                        font-size: 65px;
+                        color: white;
+                        
+                        
+                    }
+                }
+                .column1{
+                    @include responsive(350){
+                        margin-bottom: 30px;
+                    }
+                }
+                label {
+                        width: 100%;
+                        text-align: center;
+                
+                        p {
+                            color: white;
+                            font-size: 20px;
+                        }
+                }
+                select {
+                        @include responsive(350) {
+                            text-align: center !important;
+                        }
+                
+                        @include responsive(850) {
+                            text-align: end !important;
+                        }
+                
+                        width: 100%;
+                        padding: 8px;
+                        border-radius: 5px;
+                        background-color: transparent;
+                        border: 2px solid blue;
+                        text-align: end;
+                        color: white;
+                        font-family: "main";
+                        transition: all 0.5s;
+                        cursor: pointer;
+                
+                        option {
+                            color: black;
+                            text-align: center;
+                            font-family: "main";
+                            cursor: pointer !important;
+                            border-radius: 10px;
+                        }
+                }
+                .audio{
+                    @include flexCenter();
+                    margin-right: 0;
+                    padding-inline: 0;
+                    margin-inline:auto;
+                    #player{
+                    width: 100%;
+                    margin: auto;
+                    }
+                }
+                
+            }
+        }
+    }
+}

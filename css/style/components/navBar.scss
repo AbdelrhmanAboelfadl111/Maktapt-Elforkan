@@ -1,0 +1,106 @@
+@use "../abstracts" as *;
+nav{
+    @include Position($type: fixed!important, $t: 0, $r: 0);
+    width: 100%;
+    z-index: 1000;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    backdrop-filter: blur(5px) saturate(200%);
+    -webkit-backdrop-filter: blur(30px) saturate(120%);
+    background: rgba(0, 0, 0, 0.772);
+    @include responsive(850) {
+        flex-wrap: nowrap!important;
+    }
+    .navbar-toggler{
+        top: 20px!important;
+        @include responsive(350){
+            position: initial!important;
+        }
+        img{
+            width: 40px;
+        }
+    }
+    .logo{
+        @include flexCenter();
+        img{
+            width: 30px;
+            @include animation(animation1, 1s);
+            &:last-child{
+                animation-delay: 1s;
+            }
+        }
+        
+        .navbar-brand {
+                color: white;
+                font-size: 45px;
+                @include responsive(350){
+                    font-size: 30px;
+                }
+                padding: 5px 15px;
+        
+                &:hover {
+                    color: white;
+                }
+        
+                &:focus {
+                    color: white;
+                }
+        }
+    }
+    .collapse{
+        ul{
+            @include responsive(350) {
+                    text-align: center;
+                    padding-block: 20px;
+                    flex-direction: column-reverse;
+                }
+                @include responsive(850) {
+                    text-align: center;
+                    padding-block: inherit!important;
+                }
+            li{
+                padding: 5px;
+                margin-right: 15px;
+                overflow: hidden;
+                position: relative;
+                @include responsive(350){
+                    width: 150px;
+                    margin: auto;
+                }
+                @include responsive(850) {
+                    margin-right: 20px;
+                    width: initial!important;
+                }
+                &.active{
+                    &::after{
+                            transform: translateY(0);
+                    }
+                    a{
+                        color: white;
+                        text-shadow: 0px 4px 14px #fff;
+                    }
+                }
+                &:after{
+                    @include shapeNav($w: 100%, $h: 5px, $color:white, $opacity: 1);
+                    @include Position($type: absolute, $b: 0, $l: 0);
+                    border-radius:10px 10px 0px 0px;
+                    transform: translateY(220%);
+                    transition: all 1s;
+                }   
+                a{
+                    color: white;
+                    font-family: "main";
+                    font-weight: 500;
+                    font-size: 22px;
+                    transition: all 1s;
+                    &:hover{
+                        color: white;
+                    }
+                    &:focus{
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}

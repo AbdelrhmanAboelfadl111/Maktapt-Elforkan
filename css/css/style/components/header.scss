@@ -1,0 +1,626 @@
+@use "../abstracts" as *;
+header{
+    .section{
+        height: 100%;
+        @include bgImg();
+        &::before {
+                @include shapeNav($w: 100%, $h: 100%, $color: black, $opacity: 0.7);
+                @include Position($type: absolute, $t: 0, $r: 0);
+        }
+    }
+    .section1{
+        @include flexCenter();
+        &.active{
+            .boxImg{
+                opacity: 1!important;
+                transform: translateY(0)!important;
+            }
+            .boxText{
+                opacity: 1!important;
+                transform: translateY(0)!important;
+            }
+        }
+        background-image: url("../imgs/ChatGPT\ Image\ Oct\ 13\,\ 2025\,\ 12_25_21\ AM.png");
+        .container {
+            padding-top: 20px;
+            @include flexCenter();
+            .bigBox{
+                @include flexCenter(column);
+                .boxImg{
+                    opacity: 0;
+                    transform: translateY(30px);
+                    transition: all 1s 0.5s;
+                    .imgShapes {
+                            @include flexCenter();
+                            justify-content: space-between;
+                            .shape {
+                                img {
+                                    transform: translateY(40px);
+                                    width: 30px;
+                                    @include animation(animation1,1s);
+                                }
+                                &.shape1{
+                                    img{
+                                        transform: translateY(120px);
+                                        margin-left: 30px;
+                                        animation-delay: 0.3s;
+                                    }
+                                }
+                                &.shape2{
+                                    img{
+                                        
+                                        animation-delay: 0.5s;
+                                    }
+                                }
+                                &.shape3{
+                                    img{
+                                        transform: translateY(120px);
+                                        margin-right: 30px;
+                                        animation-delay: 0.7s;
+                                    }
+                                }
+                            }
+                    }
+                    .boxImgCon{
+                        .imgCon:nth-of-type(1){
+                            @include flexCenter();
+                            img{
+                                @include animation(animation2, 1s);
+                                transform: translateY(55px);
+                                width: 150px;
+                                @include responsive(350){
+                                    width: 100px;
+                                @include animation(animation3, 1s);
+                                }
+                            }
+                        }
+                        .imgCon:nth-of-type(2) {
+                            img {
+                                width: 280px;
+                                @include responsive(350){
+                                    width: 200px;
+                                }
+                            }
+                        }
+                    }
+                }
+                .boxText{
+                    opacity: 0;
+                    transform: translateY(30px);
+                    transition: all 1s 1s;
+                    .headBox{
+                        @include flexCenter();
+                        gap: 20px;
+                        .imgCon{
+                            @include flexCenter();
+                            img{
+                                width: 30px;
+                                @include animation(animation1,1s)
+                            }
+                            &.imgCon2{
+                                img {
+                                    margin-top: 7px;
+                                    animation-delay: 0.3s;
+                                }
+                            }
+                        }
+                        h1.library {
+                            font-size: 70px;
+                            margin-bottom:20px ;
+                            @include responsive(350) {
+                                font-size: 50px;
+                                margin-bottom: 20px;
+                            }
+                            @include responsive(1050) {
+                                margin-bottom: 0px;
+                            }
+                            color: #FFFFFF;
+                            text-shadow: 0px 5px 38px #fff;
+                        }
+                    }
+                    .textanim{
+                        height: 100%!important;
+                        text-align: center;
+                        font-size: 50px;
+                        @include responsive(350) {
+                            font-size: 30px;
+                        }
+                        @include responsive(450) {
+                            font-size: 37px;
+                        }
+                        color: white;
+                        span{
+                            &.cd-words-wrapper{
+                                text-align: center;
+                                width: 150px!important;
+                                @include responsive(350) {
+                                    width: 40px!important;
+                                }
+                                @include responsive(650) {
+                                    width: 150px!important;
+                                }
+                            }
+                            b{
+                                @include responsive(650) {
+                                        margin-top: 0;
+                                }
+                                @include responsive(350){
+                                    margin-top: 0!important;
+                                }
+                                @include flexCenter();
+                                margin-top: 10px;
+                                font-size: 40px;
+                                gap: 10px;
+                                i{
+                                    font-size: 30px;
+                                }
+                                p{
+                                    @include responsive(350) {
+                                        display: none;
+                                    }
+                                    @include responsive(650) {
+                                        display: initial!important;
+                                    }
+                                }
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .section2{
+        background-image: url("../imgs/49278698859241.jpg");
+        &::before {
+                opacity: 0.3;
+        }
+        &.active{
+            .box{
+                transform: translateY(0)!important;
+                opacity: 1!important;
+                &.person1 {
+                    transition-delay: 1s!important;
+                }
+            
+                &.person2 {
+                    transition-delay: 1.5s!important;
+                }
+            
+                &.person3 {
+                    transition-delay: 2s!important;
+                }
+            
+                &.person4 {
+                    transition-delay: 2.5s!important;
+                }
+            }
+            .container{
+                .parent{
+                    .textBox {
+                        h2{
+                            transform: translateY(0);
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+        .container{
+            .parent{
+                overflow: hidden!important;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                .textBox {
+                    position: absolute;
+                    top: 30px;
+                    margin-top: 50px;
+                    overflow: hidden;
+                    @include flexCenter();
+                    
+                    img {
+                        width: 30px;
+                        @include animation(animation1, 1s);
+                        &:nth-last-of-type(2) {
+                            animation-delay: 0.5s;
+                        }
+                    }
+                    h2 {
+                        font-size: 50px;
+                        color: white;
+                        transform: translateY(-200%);
+                        opacity: 0;
+                        text-shadow: 0px 5px 38px #fff;
+                        transition: all 1s 1s;
+                        @include responsive(350){
+                            font-size: 38px;
+                        }
+                        @include responsive(850){
+                            font-size: 45px;
+                        }
+                    }
+                }
+                .personCon {
+                    position: absolute;
+                    bottom: 40px;
+                    @include responsive(350) {
+                        position: relative !important;
+                        top: 60px;
+                        overflow-x: auto !important;
+                        white-space: nowrap;
+                    }
+                    
+                    .row {
+                        @include responsive(350) {
+                            flex-wrap: nowrap !important;
+                            display: flex !important;
+                            width: max-content !important;
+                        }
+            
+                        .column {
+                            @include responsive(350) {
+                                width: 350px;
+                                flex: 0 0 350px; // كل عنصر ياخد 350px ثابت
+
+                            }
+            
+                            padding: 20px;
+                            transform: scale(0.9);
+                            transition: all 0.5s;
+                            overflow: hidden;
+            
+                            &:hover {
+                                transform: scale(1);
+                            }
+            
+                            .box {
+                                height: 350px;
+                                width: 300px;
+                                border-radius: 15px;
+                                overflow: hidden;
+                                box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+                                @include Position($type: relative);
+                                transform: translateY(150%);
+                                opacity: 0;
+            
+                                &:hover {
+                                    .shape {
+                                        .textCon {
+                                            p {
+                                                text-shadow: 0px 5px 18px #ffffff !important;
+                                            }
+                                        }
+                                    }
+                                }
+            
+                                transition: all 1s;
+                                cursor: pointer;
+            
+                                .shape {
+                                    @include size(100%, 100%);
+                                    @include Position($type: absolute, $t: 0, $r: 0);
+                                    background-color: rgba(0, 0, 0, 0.5);
+                                    @include flexCenter(column);
+            
+                                    .textCon {
+                                        @include flexCenter();
+                                        font-size: 30px;
+                                        color: white;
+                                        text-shadow: 0px 5px 38px #fff;
+                                        p {
+                                            transition: all 0.5s;
+                                            @include responsive(350){
+                                                font-size: 30px;
+                                            }
+                                        }
+                                    }
+            
+                                    .btnCon {
+                                        width: 100%;
+                                        @include Position($type: absolute, $b: 30px, $r: 0);
+                                        @include flexCenter();
+            
+                                        button {
+                                            width: 80%;
+                                            background-color: transparent;
+                                            border: 2px solid white;
+                                            border-radius: 20px;
+                                            padding: 7px 20px;
+                                            color: white;
+                                            font-size: 20px;
+                                            font-family: 'Rubik';
+                                            font-weight: 600;
+                                            overflow: hidden;
+                                            transition: all 0.5s;
+                                            @include Position($type: relative);
+                                            @include flexCenter();
+                                            gap: 40px;
+            
+                                            .imgCon {
+                                                transition: all 0.5s;
+            
+                                                img {
+                                                    width: 25px;
+                                                    height: 25px;
+                                                }
+            
+                                                &.img1 {
+                                                    transform: translateX(-210%);
+                                                }
+            
+                                                &.img2 {
+                                                    transform: translateX(210%);
+            
+                                                    img {
+                                                        transform: rotate(180deg);
+                                                    }
+                                                }
+                                            }
+            
+                                            &:hover {
+                                                transform: scale(0.95);
+            
+                                                .img1 {
+                                                    transform: translateX(0);
+                                                }
+            
+                                                .img2 {
+                                                    transform: translateX(0);
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+            
+                                img {
+                                    width: 100%;
+                                    height: 100%;
+            
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .section3{
+        background-image: url("../imgs/ChatGPT\ Image\ Oct\ 14\,\ 2025\,\ 12_23_12\ AM.png");
+        &::before{
+            opacity: 0.3;
+        }
+        &.active{
+            .box{
+                opacity: 1 !important;
+            }
+        }
+        .bigBoxForShapes{
+            position: relative;
+            img{
+                position: absolute;
+                @include animation(animation1, 2s);
+                width: 35px;
+                transform: rotate(35deg);
+                filter: blur(1.5px) saturate(300%);
+                &:nth-of-type(1){
+                    top: 200px;
+                    left: 50px;
+                }
+                &:nth-of-type(2){
+                    top: 50%;
+                    left: 200px;
+                    animation-delay: 0.5s;
+                }
+                &:nth-of-type(3){
+                    bottom: 120px;
+                    left: 50px;
+                    animation-delay: 1s;
+                }
+                &:nth-of-type(4){
+                    top: 200px;
+                    right: 50px;
+                    animation-delay: 1.5s;
+                }
+                &:nth-of-type(5){
+                    top:50%;
+                    right: 200px;
+                    animation-delay: 2s;
+                }
+                &:nth-of-type(6){
+                    right: 50px;
+                    bottom: 120px;
+                    animation-delay: 2.5s;
+                }
+            }
+            @include size(100%,100%);
+            backdrop-filter: blur(5px) saturate(700%);
+            background: rgba(0, 0, 0, 0.348);
+            .box {
+                &.shaked{
+                    @include animation(animation4, 0.2s);
+                }
+                .playerCon{
+                    @include responsive(350){
+                        margin-top: 10px!important;
+                    }
+                    padding: 10px;
+                }
+                .row.down{
+                    margin-top: 20px!important;
+                }
+                .down{
+                    z-index: 101010;
+                    width: 100%;
+                    text-align: center;
+                    @include flexCenter();
+                    .columnDown{
+                        @include flexCenter();
+                        .boxdown {
+                                border: 2px solid blue;
+                                border-radius: 10px;
+                                width: fit-content;
+                                padding: 15px 20px;
+                                @include flexCenter();
+                                font-size: 20px;
+                                transition: all 0.5s;
+                                &:hover{
+                                    @include responsive(350){
+                                        transform: none !important;
+                                        box-shadow:none!important;
+                                    }
+                                    @include responsive(850){
+                                        transform: translateY(-5px)!important;
+                                        box-shadow: rgba(0, 0, 251, 0.45) 0px 25px 20px -20px !important;
+                                    }
+                                    
+                                }
+                                a{
+                                    color: white;
+                                }
+                                .down{
+                                    width: 35px;
+                                    animation: none;
+                                    position: initial!important;
+                                    transform: rotate(0)!important;
+                                    filter: none!important;
+                                }
+                        }
+                        .alert{
+                            @include Position($type: absolute, $t: 50%, $r: 20px);
+                            @include responsive(350){
+                                display: none!important;
+
+                            }
+                            transform: translateY(200%);
+                            padding: 20px;
+                            border: 2px solid red;
+                            border-radius: 10px;
+                            opacity: 0;
+                            transition: all 0.5s;
+                            &.show{
+                                transform: translateY(-50%);
+                                opacity: 1;
+                            }
+                            h2{
+                                color: white;
+                                margin: 0;
+                            }
+                        }
+                    }
+                    
+                }
+                .info{
+                    @include responsive(350){
+                        flex-direction: column-reverse;
+                        width: 100%!important;
+                    }
+                }
+                    @include flexCenter(column);
+                    @include responsive(350) {
+                        
+                        width: initial !important;
+                        height: initial !important;
+                    }
+                    @include responsive(850) {
+                        width: 600px !important;
+                        height: initial !important;
+                    }
+                    @include Position($type: relative);
+                    @include bgImg();
+                    padding: 20px;
+                    &::before {
+                        @include shapeNav($w: 100%, $h: 100%, $color: black, $opacity: 0.7);
+                        @include Position($type: absolute, $t: 0, $r: 0);
+                        z-index: 0;
+                    }
+                    width: 650px;
+                    border-radius: 30px;
+                    overflow: hidden;
+                    background-image: url("../imgs/9019777.jpg");
+                    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+                    opacity: 0;
+                    transition: all 2s 1s;
+                    .textBox{
+                        .boxTitle{
+                            @include flexCenter();
+                                gap: 30px;
+                                color: white;
+                                h2 {
+                                    font-size: 50px;
+                                    @include responsive(350){
+                                        font-size: 40px;
+                                        margin-bottom: 0!important;
+                                    }
+                                }
+                                img{
+                                    position: initial!important;
+                                    width: 30px;
+                                    display: none;
+                                    animation-name: animation1;
+                                    filter: none;
+                                    &.play{
+                                        @include responsive(450){
+                                            display: initial !important;
+                                        }
+                                    }
+                                }
+                        }
+                       
+                    }
+                    .column {
+                        @include responsive(1050){
+                            width: 100%;
+                        }
+                        .con {
+                            @include flexCenter(column);
+                            padding: 10px;
+                            label {
+                                width: 100%;
+                                text-align: center;
+                                p {
+                                    color: white;
+                                    font-size: 20px;
+                                    @include responsive(350){
+                                        margin-bottom: 5px!important;
+                                    }
+                                }
+                            }
+                            select {
+                                @include responsive(350){
+                                    text-align: center!important;
+                                }
+                                @include responsive(850){
+                                    text-align: end!important;
+                                }
+                                width: 100%;
+                                padding: 8px;
+                                border-radius: 5px;
+                                background-color: transparent;
+                                border: 2px solid blue;
+                                text-align: end;
+                                color: white;
+                                font-family: "main";
+                                transition: all 0.5s;
+                                cursor: pointer;
+                                option {
+                                    color: black;
+                                    text-align: center;
+                                    font-family: "main";
+                                    cursor: pointer !important;
+                                    border-radius: 10px;            
+                                }
+                            }
+                        }
+                    }
+                    audio {
+                        width: 100%;
+            
+                    }
+            }
+        }
+    }
+}
+
+

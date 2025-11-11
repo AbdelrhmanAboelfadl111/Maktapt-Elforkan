@@ -1,0 +1,47 @@
+@keyframes animation1 {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+@keyframes animation2 {
+    from {
+        transform: translateY(70px);
+    }
+
+    to {
+        transform: translateY(60px);
+    }
+}
+@keyframes animation3 {
+    from {
+        transform: translateY(50px);
+    }
+
+    to {
+        transform: translateY(40px);
+    }
+}
+@keyframes animation4 {
+    0%{
+        transform: translateX(0);
+    }
+    50%{
+        transform: translateX(10px);
+    }
+    100%{
+        transform: translateX(-10px);
+    }
+}
+@keyframes bars-j7enxv {
+    100% {
+        background-position: left top, center top, right top;
+    }
+}
+@keyframes progress-pf82op {
+    100% {
+        inset: 0;
+    }
+}
