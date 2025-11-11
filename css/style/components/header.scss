@@ -251,11 +251,9 @@ header{
                         .column {
                             @include responsive(350) {
                                 width: 350px;
-                                flex: 0 0 350px; // كل عنصر ياخد 350px ثابت
-
                             }
                             @include responsive(650) {
-                                width: inherit!important;
+                                width: 300px!important;
                             }
                             padding: 20px;
                             transform: scale(0.9);
@@ -265,15 +263,13 @@ header{
                                 transform: scale(1);
                             }
                             .box {
-                                height: 350px;
-                                width: 300px;
+                                height: 100%;
+                                width: 100%;
                                 border-radius: 15px;
                                 overflow: hidden;
                                 box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
                                 @include Position($type: relative);
-                                @include responsive(350) {
-                                    width: initial!important;
-                                }
+                                
                                 transform: translateY(150%);
                                 opacity: 0;
                                 &:hover {
