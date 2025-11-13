@@ -288,7 +288,6 @@ header{
                                     @include Position($type: absolute, $t: 0, $r: 0);
                                     background-color: rgba(0, 0, 0, 0.5);
                                     @include flexCenter(column);
-            
                                     .textCon {
                                         @include flexCenter();
                                         font-size: 30px;
@@ -297,11 +296,10 @@ header{
                                         p {
                                             transition: all 0.5s;
                                             @include responsive(350){
-                                                font-size: 25px;
+                                                font-size: 20px;
                                             }
                                         }
                                     }
-            
                                     .btnCon {
                                         width: 100%;
                                         @include Position($type: absolute, $b: 30px, $r: 0);
